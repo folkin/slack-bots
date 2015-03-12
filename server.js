@@ -1,4 +1,5 @@
 
+var coffee = require('coffee-script/register');
 var app = require('./app');
 var debug = require('debug')('slack:http');
 var http = require('http');
@@ -10,9 +11,6 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
-
-
 
 function normalizePort(val) {
   var port = parseInt(val, 10);

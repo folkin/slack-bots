@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var command = require('./routes/command');
+var bots = {
+  'lunch': require('./bots/lunch.js')
+};
 
 var app = express();
 
@@ -37,5 +40,7 @@ app.use(function(err, req, res, next) {
     error: err
   });
 });
+
+bots.lunch.login();
 
 module.exports = app;
